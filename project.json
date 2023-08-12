@@ -1,0 +1,22 @@
+{
+  "name": "@idgarages/dotenv-extract",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "@idgarages/dotenv-extract",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/dotenv/**/*.{js,jsx,ts,tsx}"]
+      }
+    },
+    "types": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx tsc --noEmit"
+      }
+    }
+  },
+  "tags": []
+}
